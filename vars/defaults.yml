@@ -74,7 +74,7 @@ gitify_repo: https://github.com/mkfifo/koha-gitify.git
 gitify_version: master
 gitify_dir: "{{ home_dir }}/gitify"
 
-gitbz_repo: https://github.com/joubu/git-bz.git
+gitbz_repo: https://gitlab.com/koha-community/git-bz.git
 gitbz_version: apply_on_cascade
 gitbz_dir: "{{ home_dir }}/gitbz"
 
