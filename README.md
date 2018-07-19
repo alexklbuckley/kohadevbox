@@ -29,7 +29,7 @@ to set up a VirtualBox. It targets the following tasks:
 * Koha's [qa-test-tools](https://gitlab.com/koha-community/qa-test-tools) set up and ready to use.
 * Koha's release-tools set up and ready to use.
 
-See the [open issues](https://github.com/digibib/kohadevbox/issues) for more to come.
+See the [open issues](https://gitlab.com/koha-community/kohadevbox/issues) for more to come.
 
 ## Getting started
 
@@ -56,7 +56,7 @@ the directory that was created by the cloning operation:
 
 ```
   $ mkdir -p ~/git ; cd ~/git
-  $ git clone https://github.com/digibib/kohadevbox.git
+  $ git clone https://gitlab.com/koha-community/kohadevbox.git
   $ cd kohadevbox
   $ git checkout origin/master
 ```
@@ -494,7 +494,7 @@ recommended for getting to know Koha in general.
 
 ## Code, issues etc
 
-https://github.com/digibib/kohadevbox/
+https://gitlab.com/koha-community/kohadevbox/
 
 ## Gotchas
 
