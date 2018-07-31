@@ -17,6 +17,7 @@
 - name: Less | Install Less globally
   npm:
     name: less
+    version: '2.7.3'
     global: yes
 
 - name: Less | Install the Clean CSS plugin for Less globally
