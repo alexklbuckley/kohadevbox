@@ -38,7 +38,7 @@
     become: yes
     when: elasticsearch
 
-  - include: less.yml
+  - include: node.yml
     become: yes
 
   - include: remote-debugger.yml

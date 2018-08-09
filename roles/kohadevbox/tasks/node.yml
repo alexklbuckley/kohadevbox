@@ -1,26 +1,33 @@
 
-- name: Less | Add Node.js repository (key)
+- name: Node | Add Node.js repository (key)
   apt_key:
     url: "https://deb.nodesource.com/gpgkey/nodesource.gpg.key"
     state: present
 
-- name: Less | Add Node.js repository (repo)
+- name: Node | Add Node.js repository (repo)
   apt_repository:
     repo: "deb https://deb.nodesource.com/{{ node_version }} {{ ansible_distribution_release }} main"
     state: present
 
-- name: Less | Instal Node.js
+- name: Node | Instal Node.js
   apt:
     name: nodejs
     state: latest
 
-- name: Less | Install Less globally
+- name: Node | Install Yarn
+  npm:
+    name: yarn
+    global: yes
+
+- name: Node | Install Less
   npm:
     name: less
     version: '2.7.3'
     global: yes
+  when: less
 
-- name: Less | Install the Clean CSS plugin for Less globally
+- name: Node | Install the Clean CSS plugin for Less
   npm:
     name: less-plugin-clean-css
     global: yes
+  when: less

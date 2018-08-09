@@ -29,6 +29,8 @@ remote_debugger_key: "''"
 selenium: false
 selenium_url: https://selenium-release.storage.googleapis.com/2.53/selenium-server-standalone-2.53.1.jar
 
+less: true
+
 # Set mysql_engine: mysql | mariadb
 mysql_engine: mysql
 # Set to "*" to listen on all interfaces
