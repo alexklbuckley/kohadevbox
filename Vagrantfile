@@ -202,6 +202,6 @@ Vagrant.configure(2) do |config|
 
   end
 
-  config.vm.post_up_message = "Welcome to KohaDevBox!\nSee https://github.com/digibib/kohadevbox for details"
+  config.vm.post_up_message = "Welcome to KohaDevBox!\nSee https://gitlab.com/koha-community/kohadevbox for details"
 
 end
