@@ -37,7 +37,7 @@ See the [open issues](https://gitlab.com/koha-community/kohadevbox/issues) for m
 
 If you don't have them already, you need to install some prerequisites:
 
-* Virtualbox
+* Virtualbox: https://www.virtualbox.org/
 
 * Vagrant (version 2.0+): http://www.vagrantup.com/downloads.html
 
