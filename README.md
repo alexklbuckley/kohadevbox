@@ -37,17 +37,12 @@ See the [open issues](https://gitlab.com/koha-community/kohadevbox/issues) for m
 
 If you don't have them already, you need to install some prerequisites:
 
-* Virtualbox: https://www.virtualbox.org/
-
-* Vagrant (version 2.0+): http://www.vagrantup.com/downloads.html
-
+* [Virtualbox](https://www.virtualbox.org)
+* [Vagrant (version 2.0+)](https://www.vagrantup.com/downloads.html)
   **Note:** Ubuntu and Debian ship their own vagrant package, but don't use it. Download the latest version from the above URL.
-
-* Ansible (version 2.0+): http://docs.ansible.com/ansible/intro_installation.html
-  
+* [Ansible (version 2.0+)](https://docs.ansible.com/ansible/intro_installation.html)
   **Note:** Ansible is not required when installing on **Windows** or when using LOCAL_ANSIBLE=1.
-
-* Git: http://git-scm.com/downloads
+* [Git](https://git-scm.com/downloads)
 
 **Note to Windows users:** The following command-line interactions should take place on the **Git Bash** command line. You may have to run Git Bash as an administrator in order for it to work correctly.
 
@@ -79,31 +74,29 @@ And don't leave a space at the begining of the line. It will break the file.
 
 ### Running Vagrant
 
-Before you start using Vagrant, you will probably want to do this, to speed up
-the future installation of packages etc in your VirtualBox:
+To spin up a new dev box:
 
 ```
-  $ vagrant plugin install vagrant-cachier
+  $ vagrant up
 ```
 
-To spin up a new dev box. You need to specify either jessie, wheezy or trusty:
+This will launch the default OS (Debian Jessie). If you want another one, you need to
+specify it like this:
 
 ```
   $ vagrant up [<distribution>]
 ```
 
-Note: ommiting the distribution will default to jessie for all the vagrant * commands.
-
 This will download and install a bunch of stuff, please be patient - especially when 
 you are not using `SYNC_REPO` (see below), since then the full Koha repository (which is over 
 2GiB) will be cloned too.
 
-If the process somehow gets interrupted, hangs, or otherwise does not get completed, 
-you may need to force a re-build of the dev box to make sure everything is installed:
+Sometimes, the process somehow gets interrupted, hangs, or otherwise does not get completed.
+The most common cause are networking issues (temporary or permanent).
+When this happens, you can continue the process like this:
 
 ```
-  $ vagrant halt [<distribution>]
-  $ vagrant up --provision [<distribution>]
+  $ vagrant provision [<distribution>]
 ```
 
 When everything is done, you should be able to access your dev installation of Koha
