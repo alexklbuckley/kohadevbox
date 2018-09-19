@@ -88,8 +88,10 @@ Vagrant.configure(2) do |config|
   config.vm.network :forwarded_port, guest: 9200, host: 9200, auto_correct: true  # ES
   config.vm.network "private_network", ip: "192.168.50.10"
 
+  elasticsearch = ENV['KOHA_ELASTICSEARCH'] || vconfig['elasticsearch']
+
   config.vm.provider :virtualbox do |vb|
-    if ENV['KOHA_ELASTICSEARCH'] || vconfig['elasticsearch']
+    if elasticsearch
       vb.customize ["modifyvm", :id, "--memory", "4096"]
     else
       vb.customize ["modifyvm", :id, "--memory", "2048"]
@@ -186,7 +188,7 @@ Vagrant.configure(2) do |config|
       ansible.extra_vars.merge!({ sync_kohadocs: true });
     end
 
-    if ENV['KOHA_ELASTICSEARCH']
+    if elasticsearch
       ansible.extra_vars.merge!({ elasticsearch: true });
     end
 
