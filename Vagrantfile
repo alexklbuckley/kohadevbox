@@ -46,21 +46,6 @@ end
 
 Vagrant.configure(2) do |config|
 
-  # http://fgrehm.viewdocs.io/vagrant-cachier
-  if Vagrant.has_plugin?("vagrant-cachier") and not OS.windows?
-    config.cache.scope = :box
-    config.cache.synced_folder_opts = {
-      type: :nfs,
-      # The nolock option can be useful for an NFSv3 client that wants to avoid the
-      # NLM sideband protocol. Without this option, apt-get might hang if it tries
-      # to lock files needed for /var/cache/* operations. All of this can be avoided
-      # by using NFSv4 everywhere. Please note that the tcp option is not the default.
-      mount_options: ['rw', 'vers=3', 'tcp', 'nolock']
-    }
-  else
-    puts "Run 'vagrant plugin install vagrant-cachier' to speed up provisioning."
-  end
-
   config.vm.hostname = "kohadevbox"
   if OS.windows?
     if ENV['SMB']
