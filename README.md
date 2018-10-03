@@ -14,8 +14,8 @@ to set up a VirtualBox. It targets the following tasks:
 
 * A virtual machine running either:
 
-  - Debian 8 (jessie) [*]
-  - Debian 9 (stretch)
+  - Debian 9 (stretch) [*]
+  - Debian 8 (jessie)
   - Ubuntu 16.04 (xenial)
 
 [*] Default if none specified.
@@ -80,7 +80,7 @@ To spin up a new dev box:
   $ vagrant up
 ```
 
-This will launch the default OS (Debian Jessie). If you want another one, you need to
+This will launch the default OS (Debian Stretch). If you want another one, you need to
 specify it like this:
 
 ```

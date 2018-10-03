@@ -55,11 +55,11 @@ Vagrant.configure(2) do |config|
     end
   end
 
-  config.vm.define "stretch", autostart: false do |stretch|
+  config.vm.define "stretch", primary: true do |stretch|
     stretch.vm.box = "debian/stretch64"
   end
 
-  config.vm.define "jessie", primary: true do |jessie|
+  config.vm.define "jessie", autostart: false do |jessie|
     jessie.vm.box = "debian/jessie64"
   end
 
