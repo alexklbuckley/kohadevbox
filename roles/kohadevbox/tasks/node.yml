@@ -16,6 +16,18 @@
   with_items:
     - nodejs
     - npm
+  when:
+    - ansible_distribution_release != 'jessie'
+
+- name: Node | Instal Node.js (jessie)
+  apt:
+    name: "{{ item }}"
+    state: latest
+  with_items:
+    - nodejs
+  when:
+    - ansible_distribution_release == 'jessie'
+
 
 - name: Node | Install Yarn
   npm:
