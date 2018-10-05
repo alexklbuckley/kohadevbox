@@ -63,6 +63,10 @@ Vagrant.configure(2) do |config|
     jessie.vm.box = "debian/jessie64"
   end
 
+  config.vm.define "bionic", autostart: false do |bionic|
+    bionic.vm.box = "ubuntu/bionic64"
+  end
+
   config.vm.define "xenial", autostart: false do |xenial|
     xenial.vm.box = "geerlingguy/ubuntu1604"
   end

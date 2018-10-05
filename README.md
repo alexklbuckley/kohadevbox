@@ -14,11 +14,13 @@ to set up a VirtualBox. It targets the following tasks:
 
 * A virtual machine running either:
 
-  - Debian 9 (stretch) [*]
+  - Debian 9 (stretch) [__*__]
   - Debian 8 (jessie)
+  - Ubuntu 18.04 (bionic) [__**__]
   - Ubuntu 16.04 (xenial)
 
-[*] Default if none specified.
+[__*__] Default if none specified.
+[__**__] Requires __LOCAL_ANSIBLE=1__
 
 * Latest version of koha-common from the unstable repository (master branch)
   or your custom repository if specified.

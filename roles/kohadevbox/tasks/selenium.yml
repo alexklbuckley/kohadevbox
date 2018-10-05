@@ -17,13 +17,13 @@
     become: yes
     shell: echo oracle-java8-installer shared/accepted-oracle-license-v1-1 select true | /usr/bin/debconf-set-selections
 
-  - name: Add Mozilla Firefox-ESR PPA
-    when:
-      - ansible_distribution_release == 'xenial' # Xenial lacks FireFox-ESR
+  - name: Selenium | Add Mozilla Firefox-ESR PPA
     become: yes
     apt_repository:
       repo: ppa:mozillateam/ppa
       update_cache: yes
+    when:
+      - ansible_distribution_release == 'xenial' or ansible_distribution_release == 'bionic' # Bionic and Xenial lack FireFox-ESR
 
   - name: Selenium | Dependencies (apt)
     become: yes

@@ -11,8 +11,11 @@
 
 - name: Node | Instal Node.js
   apt:
-    name: nodejs
+    name: "{{ item }}"
     state: latest
+  with_items:
+    - nodejs
+    - npm
 
 - name: Node | Install Yarn
   npm:
