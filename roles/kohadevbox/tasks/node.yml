@@ -17,17 +17,16 @@
     - nodejs
     - npm
   when:
-    - ansible_distribution_release != 'jessie'
+    - ansible_distribution_release == 'stretch'
 
-- name: Node | Instal Node.js (jessie)
+- name: Node | Instal Node.js
   apt:
     name: "{{ item }}"
     state: latest
   with_items:
     - nodejs
   when:
-    - ansible_distribution_release == 'jessie'
-
+    - ansible_distribution_release != 'stretch'
 
 - name: Node | Install Yarn
   npm:
