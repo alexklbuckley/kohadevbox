@@ -92,7 +92,7 @@ koha_qa_repo: https://gitlab.com/koha-community/qa-test-tools.git
 koha_qa_version: master
 koha_qa_dir: "{{ home_dir }}/qa-test-tools"
 
-node_version: node_6.x
+node_version: node_8.x
 
 git_email: your_email
 git_full_name: "Your Full Name"
