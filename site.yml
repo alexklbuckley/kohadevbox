@@ -9,6 +9,15 @@
       - vars/user.yml
 
   pre_tasks:
+    - name: Prevent installation of python-openssl on Debian Jessie
+      copy:
+        src: ./files/apt-koha.pref
+        dest: /etc/apt/preferences.d/apt-koha.pref
+        owner: root
+        group: root
+        mode: 0644
+      become: yes
+      when: ansible_distribution == 'Debian' and ansible_distribution_release == 'jessie'
     - name: Update apt cache if needed
       apt:
         update_cache: yes
